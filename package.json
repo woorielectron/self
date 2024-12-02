@@ -1,0 +1,28 @@
+{
+  "name": "dbtest",
+  "version": "0.1.0",
+  "private": true,  
+  "scripts": {    
+    "dev": "ts-node src/server.ts -p 3000 & next dev -p 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "next": "15.0.3",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.17.9",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
+    "tslib": "^2.8.1",
+    "typescript": "^5"
+  }
+}
