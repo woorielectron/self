@@ -2,10 +2,11 @@
   "name": "dbtest",
   "version": "0.1.0",
   "private": true,  
-  "scripts": {    
-    "dev": "ts-node src/server.ts -p 3000 & next dev -p 3001",
+  "scripts": {        
+    "test": "ts-node src/server.ts",
+    "dev": "ts-node src/server.ts -p 3002 & next dev -p 3001",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3002",
     "lint": "next lint"
   },
   "dependencies": {
