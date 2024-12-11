@@ -1,4 +1,4 @@
-### 테스트
+### useEffect 개념 연습
 ```
 http://localhost:3000/home/1001
 /home/[id]/page.tsx 에서 수정

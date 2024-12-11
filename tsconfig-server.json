@@ -9,9 +9,11 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "noEmit": false,
     "esModuleInterop": true,
-    "module": "ESNext",
-    "moduleResolution": "bundler",
+    // "preserveValueImports": false,
+    "allowSyntheticDefaultImports": true,
+    "module": "CommonJS",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -26,15 +28,16 @@
         "./src/*"
       ]
     },
-    "noEmit": true
+    "outDir": "./build",
+    "rootDir": "./src",
+    "moduleResolution": "node"
   },
   "include": [
-    ".next/types/**/*.ts",
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
+    "src/server.ts",    
   ],
   "exclude": [
+    "src/app/**/*",
+    ".next/types/**/*.ts",
     "node_modules"
   ]
 }
