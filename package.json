@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "s-tsc":"tsc -p tsconfig-server.json",
-    "s-node":"node build/server.js",
-    "s-nodemon":"nodemon build/server.js",
+    "s-node":"node build/server/server.js",
+    "s-nodemon":"nodemon build/server/server.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

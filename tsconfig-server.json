@@ -11,8 +11,6 @@
     "strict": true,
     "noEmit": false,
     "esModuleInterop": true,
-    // "preserveValueImports": false,
-    "allowSyntheticDefaultImports": true,
     "module": "CommonJS",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -30,10 +28,9 @@
     },
     "outDir": "./build",
     "rootDir": "./src",
-    "moduleResolution": "node"
   },
   "include": [
-    "src/server.ts",    
+    "src/**/*",    
   ],
   "exclude": [
     "src/app/**/*",
