@@ -5,12 +5,17 @@ import fs from 'fs';
 dotenv.config();
 
 import { myUser } from './components/user';
-console.log(__dirname);
-fs.readFile(`${__dirname}/components/user.js`, 'utf-8', (err, data) =>
+
+// fs.readFile(`${__dirname}/components/user.js`, 'utf-8', (err, data) =>
+// {
+//   console.log(err);
+//   console.log(data);
+// });
+fs.readdir('./', (err, file) =>
 {
-  console.log(err);
-  console.log(data);
+  console.log(file);
 });
+fs.writeFile("./test.txt", "hello", err => { });
 
 
 
