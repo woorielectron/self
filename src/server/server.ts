@@ -1,38 +1,36 @@
-import http, { IncomingMessage, ServerResponse } from 'http';
-import dotenv from 'dotenv';
-dotenv.config();
-import path from 'path';
-import fs from 'fs';
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
+import { PrismaClient } from '@prisma/client';
 
-import { myUser } from './components/user';
+const prisma = new PrismaClient();
+const hostname = 'localhost';
 
-const hostname: string = 'localhost';
 const port = Number(process.env.NEXT_PUBLIC_PORT);
-
 const server = express();
+const router = express.Router();
+/*------------------------------------------------
+  CORS설정(제일 상단에 위치필요), use 메서드 
+-------------------------------------------------*/
+server.use(cors());
 server.use(express.json());
+server.use(router);
+router.route('/com')
+  .get(async (req, res) =>
+  {
+    // test
+    const users = await prisma.post.create({
+      data: {}
+    })
+    res.status(202).json('ok');
+  })
+  .post(async (req, res) =>
+  {
+
+  });
+
 
 server.listen(port, hostname, () =>
 {
-  console.log('listening');
-});
-server.get('/home/:id', (req, res) =>
-{
-  res.writeHead(200, { 'Content-Type': 'text/plain;charset=utf8' });
-  res.end(`get 전송  ${req.params.id}`);
-});
-server.post('/home/:id', (req, res) =>
-{
-  console.log(req.body);
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end(`post 전송 ${req.params.id}`);
-
-});
-fs.writeFile("./test.txt", "hello", err => { });
-
-
-
-
-
+  console.log('서버시작-PRISMA')
+})
 
